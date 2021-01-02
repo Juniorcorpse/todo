@@ -57,6 +57,12 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+## LINKS
+
+https://jwt-auth.readthedocs.io/en/develop/laravel-installation/
+https://laravel.com/docs/8.x/sanctum#installation
+
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
