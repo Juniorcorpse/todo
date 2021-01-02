@@ -9,9 +9,10 @@
 
 
 ## LINKS
+<p align="">https://jwt-auth.readthedocs.io/en/develop/laravel-installation/</p>
+<p align="">https://laravel.com/docs/8.x/sanctum#installation</p>
 
-https://jwt-auth.readthedocs.io/en/develop/laravel-installation/
-https://laravel.com/docs/8.x/sanctum#installation
+
 
 
 ## License
