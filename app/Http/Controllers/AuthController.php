@@ -37,26 +37,46 @@ class AuthController extends Controller
 
         return $data;
     }
-
+    
     public function login(Request $request){
         $data = ['error' => ''];
         $creds = $request->only('email', 'password');
+        /*/auth login sanctum
         if(Auth::attempt($creds)){
             $user = User::where('email', $creds['email'])->first();
 
             $timer = time().rand(0,9999);
             $token = $user->createToken($timer)->plainTextToken;
             $data['token'] = $token;
+            ...
+            */
+            //auth login jWt
+            $token = Auth::attempt($creds);
+            if($token){
+                $data['token'] =   $token; 
+            //auth login jWt fim
         }else{
-            $data['error'] = 'email e/ou senha incorretos!';
+            $data['error'] = 'email e/ou senha incorretos jwt!';
         }
         return $data;
     }
 
+    
     public function logout(Request $request){
         $data = ['error' => ''];
-        $user = $request->user();
-        $user->tokens()->delete();
+        //auth logout sanctum
+        //$user = $request->user();
+        //$user->tokens()->delete();
+        //auth JWT
+        Auth::logout();
+        //auth JWT fim
         return $data;
+    }
+
+    public function me(){
+        $data = ['error' => ''];
+        $user = Auth::user();
+        $data['email'] = $user->email;
+        return $data;        
     }
 }
