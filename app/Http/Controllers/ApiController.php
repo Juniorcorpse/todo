@@ -32,7 +32,9 @@ class ApiController extends Controller
     }
     public function all(){
         $data = ['error' => ''];
-        $data['list'] = Todo::all();
+        $todo = Todo::SimplePaginate(2);
+        $data['list'] = $todo->items();
+        $data['current_page'] = $todo->currentPage();
         return $data;
     }
     public function read($id){
@@ -79,8 +81,15 @@ class ApiController extends Controller
         
         return $data;        
     }
-    public function delete(){
-        
+    public function delete($id){
+        $data = ['error' => ''];
+        $todo = Todo::find($id);
+        if($todo){
+            $todo->delete();
+        }else{
+            $data['error'] = "A tarefa {$id} não existe";
+        }
+        return $data;        
     }
 
 }
