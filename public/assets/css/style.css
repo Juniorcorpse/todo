@@ -1,0 +1,20 @@
+/* @import url("/resources/css/app.css"); */
+:root{
+    --bg-light : #f0f2fa;
+    --bg-white : #f6f5ff;
+    --txt-dark : #0a0040;
+    --cl-primary : #6143ff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    color: var(--txt-dark);
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-white);
+}
