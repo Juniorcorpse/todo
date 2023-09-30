@@ -14,9 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
-    return view('home');
-=======
     return view('layouts/home');
->>>>>>> 16979996052e5b6b3bfed52ea53421adbe78d9d6
 });
